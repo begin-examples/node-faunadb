@@ -4,7 +4,6 @@
   "description": "<img src=\"https://static.begin.app/node-faunadb/readme-banner.png\" width=\"655\">",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "arc sandbox"
   },
   "repository": {
