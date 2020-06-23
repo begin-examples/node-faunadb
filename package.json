@@ -1,0 +1,21 @@
+{
+  "name": "node-faunadb",
+  "version": "1.0.0",
+  "description": "<img src=\"https://static.begin.app/node-faunadb/readme-banner.png\" width=\"655\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "arc sandbox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/begin-examples/node-faunadb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/begin-examples/node-faunadb/issues"
+  },
+  "homepage": "https://github.com/begin-examples/node-faunadb#readme"
+}
