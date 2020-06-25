@@ -18,7 +18,7 @@ Deploy your own clone of this app to Begin!
 
 ## Reference
 
-- [FaunaDB](https://docs.begin.com/en/data/faunadb)
+- [FaunaDB](https://docs.begin.com/en/data/faunadb) - Begin x FaunaDB official documentation.
 - [Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
 - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
 
