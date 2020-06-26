@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/begin-examples/node-faunadb/issues"
   },
-  "homepage": "https://github.com/begin-examples/node-faunadb#readme"
+  "homepage": "https://github.com/begin-examples/node-faunadb#readme",
+  "dependencies": {
+    "faunadb": "^2.14.2"
+  }
 }
