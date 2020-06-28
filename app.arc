@@ -5,3 +5,5 @@ node-faunadb
 
 @http
 get /todos
+post /todos
+post /todos/delete
