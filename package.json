@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/begin-examples/node-faunadb#readme",
   "dependencies": {
+    "@architect/sandbox": "^1.12.6",
     "faunadb": "^2.14.2",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.1",
