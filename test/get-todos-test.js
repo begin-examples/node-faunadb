@@ -4,7 +4,7 @@ let sandbox = require('@architect/sandbox')
 let end
 
 // this starts a sandbox environment for the tests to excecute in.
-test('start', async t=> {
+test('start', async t => {
   t.plan(1)
   end = await sandbox.start()
   t.ok(true, 'started')
@@ -15,8 +15,8 @@ test('start', async t=> {
 
 
 // this ends sandbox
-test('end', async t=> {
+test('end', t => {
   t.plan(1)
-  await end()
+  end()
   t.ok(true, 'ended')
 })
