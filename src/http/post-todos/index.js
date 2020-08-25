@@ -3,6 +3,7 @@ let arc = require('@architect/functions')
 let faunadb = require('faunadb'),
 q = faunadb.query
 
+// Instantiates faunadb
 let client = new faunadb.Client({
   secret: process.env.FAUNADB_SERVER_SECRET
 })
@@ -12,10 +13,9 @@ exports.handler = async function post (req) {
   todo.created = todo.created || Date.now()
   todo.completed = !!todo.completed
   
-  await data.set({
-    table: 'todos',
-    ...todo
-  })
+  // Posts todo to faunadb
+  await console.log(client)
+  
   return {
     statusCode: 302,
     headers: {
