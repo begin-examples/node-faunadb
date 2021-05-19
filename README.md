@@ -6,7 +6,7 @@ A super simple Begin **c**reate **r**ead **u**pdate **d**elete app that exemplif
 
 # Prerequisites
 
-1. You must go to https://fauna.com/ and set up a FaunaDB account and database named 'faunadb-todos' in order to get server secret required to run this example.
+1. You must go to https://fauna.com/ and set up a FaunaDB account and database named 'todos' with an index of 'all-todos' in order to get server secret required to run this example.
 
 2. Create an `.env` file in the root of this project and add the content below with your server secret added.
 ```sh
