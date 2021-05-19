@@ -1,28 +1,53 @@
 {
   "name": "node-faunadb",
   "version": "1.0.0",
-  "description": "<img src=\"https://static.begin.app/node-faunadb/readme-banner.png\" width=\"655\">",
+  "description": "Basic CRUD app with faunadb",
   "main": "index.js",
+  "arc": {
+    "app": "faunadb-crud-app",
+    "http": [
+      {
+        "/todos": {
+          "method": "post",
+          "src": "/todos/create"
+        }
+      },
+      {
+        "/todos": {
+          "method": "get",
+          "src": "/todos/read"
+        }
+      },
+      {
+        "/todos/delete": {
+          "method": "post",
+          "src": "/todos/delete"
+        }
+      },
+      {
+        "/todos/:id": {
+          "method": "post",
+          "src": "/todos/update"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "data": {
+          "scopeID": "*String",
+          "dataID": "**String",
+          "ttl": "TTL"
+        }
+      }
+    ]
+  },
   "scripts": {
-    "start": "arc sandbox",
-    "test": "QUIET=1 tape test/*-test.js | tap-spec"
+    "init": "./scripts/init",
+    "start": "arc sandbox"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/begin-examples/node-faunadb.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/begin-examples/node-faunadb/issues"
-  },
-  "homepage": "https://github.com/begin-examples/node-faunadb#readme",
   "dependencies": {
-    "@architect/sandbox": "^1.12.6",
-    "faunadb": "^2.14.2",
-    "tap-spec": "^2.2.2",
-    "tape": "^5.0.1",
-    "tiny-json-http": "^7.2.0"
+    "@architect/functions": "^3.13.11",
+    "@architect/sandbox": "^3.4.3",
+    "faunadb": "^4.2.0"
   }
 }

@@ -1,8 +1,0 @@
-@testing
-FAUNADB_SERVER_SECRET=fnADvK6za3ACEv4Awgv7Btk2Jpqx2n13IaQUWmQ4
-
-@staging
-FAUNADB_SERVER_SECRET=fnADvK6za3ACEv4Awgv7Btk2Jpqx2n13IaQUWmQ4
-
-@production
-FOO 3

@@ -4,6 +4,22 @@ $BADGE
 
 A super simple Begin **c**reate **r**ead **u**pdate **d**elete app that exemplifies a basic todo app that uses one static html page and three API endpoints that connect to a FaunaDB database.
 
+# Prerequisites
+
+1. You must go to https://fauna.com/ and set up a FaunaDB account and database named 'faunadb-todos' in order to get server secret required to run this example.
+
+2. Create an `.env` file in the root of this project and add the content below with your server secret added.
+```sh
+@testing
+FAUNADB_SERVER_SECRET=Your server secret
+
+@staging
+FAUNADB_SERVER_SECRET=Your server secret
+
+@production
+FAUNADB_SERVER_SECRET=Your server secret
+```
+
 ## Deploy your own
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-faunadb)

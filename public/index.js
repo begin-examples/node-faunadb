@@ -1,48 +1,42 @@
-(function () {
-    // Kick off the app
-    init()
+(async function () {
+  // GET all todos
+  let todos = await (await fetch('/todos', {
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })).json()
 
-    // GET all todos
-    function init() {
-      fetch('/todos', {
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json'
-        }
+  // Update the DOM with data
+  update(todos)
+
+  // Update the DOM with data
+  function update(todos) {
+    let list = document.getElementById('js-todos')
+    let completed = document.getElementById('js-completed')
+    let message = document.getElementById('js-message')
+    let current = todos.filter(t => !t.completed)
+    let complete = todos.filter(t => t.completed)
+    let doneTitle = document.getElementById('js-done-title')
+    let done = complete.length && !current.length
+    let none = !complete.length && !current.length
+    if (none) {
+      message.innerHTML = Message({
+        src: '/_static/rocket.svg',
+        text: 'Let\'s get started!',
+        alt: 'Rocket'
       })
-        .then(res => res)
-        .then(body => body.json())
-        // Call update with fetched todos
-        .then(json => update(json.todos))
+    } else if (done) {
+      message.innerHTML = Message({
+        src: '/_static/astronaut.svg',
+        text: 'You did it!',
+        alt: 'Astronaut'
+      })
     }
 
-    // Update the DOM with data
-    function update(todos) {
-      let list = document.getElementById('js-todos')
-      let completed = document.getElementById('js-completed')
-      let message = document.getElementById('js-message')
-      let current = todos.filter(t => !t.completed)
-      let complete = todos.filter(t => t.completed)
-      let doneTitle = document.getElementById('js-done-title')
-      let done = complete.length && !current.length
-      let none = !complete.length && !current.length
-      if (none) {
-        message.innerHTML = Message({
-          src: '/_static/rocket.svg',
-          text: 'Let\'s get started!',
-          alt: 'Rocket'
-        })
-      } else if (done) {
-        message.innerHTML = Message({
-          src: '/_static/astronaut.svg',
-          text: 'You did it!',
-          alt: 'Astronaut'
-        })
-      }
-
-      if (complete.length) {
-        doneTitle.classList.toggle('display-none')
-      }
+    if (complete.length) {
+      doneTitle.classList.toggle('display-none')
+    }
 
       list && current.length
         ? list.innerHTML = current.map(t => Todo(t)).join('')
@@ -51,7 +45,7 @@
       completed && complete.length
         ? completed.innerHTML = complete.map(t => Todo(t)).join('')
         : ''
-    }
+  }
 
     function Message(props) {
       props = props || {}
@@ -67,7 +61,6 @@
     function Todo(props) {
       let text = props.text || ''
       let id = props.key || ''
-      let created = props.created
       let checked = props.completed
         ? 'checked="checked"'
         : ''
@@ -82,7 +75,7 @@ class="
 "
 >
 <form
-  action="/todos"
+  action="/todos/${id}"
   method="POST"
   class="
     min-width-0
@@ -116,8 +109,6 @@ class="
       focus-outline-0
     "
   />
-  <input type="hidden" name="key" value="${id}"/>
-  <input type="hidden" name="created" value="${created}"/>
   <button
     class="
       padding-1
@@ -157,5 +148,5 @@ class="
 </form>
 </li>
       `
-    }
-  }())
+  }
+}())
