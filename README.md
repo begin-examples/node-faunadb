@@ -6,9 +6,10 @@ A super simple Begin **c**reate **r**ead **u**pdate **d**elete app that exemplif
 
 # Prerequisites
 
-1. You must go to https://fauna.com/ and set up a FaunaDB account and database named 'todos' with an index of 'all-todos' in order to get server secret required to run this example.
+1. You must go to https://fauna.com/ and set up a FaunaDB account and get a server secret required to run this example
 
-2. Create an `.env` file in the root of this project and add the content below with your server secret added.
+2. Create an `.env` file in the root of this project and add the content below with your server secret added
+
 ```sh
 @testing
 FAUNADB_SERVER_SECRET=Your server secret
@@ -19,6 +20,13 @@ FAUNADB_SERVER_SECRET=Your server secret
 @production
 FAUNADB_SERVER_SECRET=Your server secret
 ```
+
+3. Create a database
+
+4. Create a collection named 'todos'
+
+5. Create an index named 'all-todos'
+
 
 ## Deploy your own
 
