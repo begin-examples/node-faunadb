@@ -27,6 +27,9 @@ FAUNADB_SERVER_SECRET=Your server secret
 
 5. Create an index named 'all-todos'
 
+Your dashboard should look like this when you finish:
+<img width="600" alt="faunadb-dashboard" src="https://user-images.githubusercontent.com/76308/119038394-ecc47480-b967-11eb-9f16-e01b985612e1.png">
+
 
 ## Deploy your own
 
