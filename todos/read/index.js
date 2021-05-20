@@ -1,6 +1,8 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
-const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
+const client = new faunadb.Client({
+  secret: process.env.FAUNADB_SERVER_SECRET
+})
 
 exports.handler = async function read() {
   let todos
@@ -14,7 +16,7 @@ exports.handler = async function read() {
           )
         ),
         q.Lambda(
-          ['ts', 'ref'],
+          'ref',
           q.Get(q.Var('ref'))
         )
       )
