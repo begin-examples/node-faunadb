@@ -48,6 +48,6 @@
   "dependencies": {
     "@architect/functions": "^3.13.11",
     "@architect/sandbox": "^3.4.3",
-    "faunadb": "^4.2.0"
+    "faunadb": "^4.4.1"
   }
 }
