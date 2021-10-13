@@ -1,7 +1,5 @@
 <img src="https://static.begin.app/node-faunadb/readme-banner.png" width="655">
 
-$BADGE
-
 A super simple Begin **c**reate **r**ead **u**pdate **d**elete app that exemplifies a basic todo app that uses one static html page and three API endpoints that connect to a FaunaDB database.
 
 # Prerequisites
