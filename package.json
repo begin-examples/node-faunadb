@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@architect/functions": "^4.1.2",
-    "@architect/sandbox": "^4.5.2",
+    "@architect/sandbox": "^5.3.5",
     "faunadb": "^4.5.4"
   }
 }
